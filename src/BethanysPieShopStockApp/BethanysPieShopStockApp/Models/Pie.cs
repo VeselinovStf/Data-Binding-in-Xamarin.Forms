@@ -1,4 +1,5 @@
 ﻿using BethanysPieShopStockApp.ViewModels;
+using System;
 
 namespace BethanysPieShopStockApp.Models
 {
@@ -67,5 +68,18 @@ namespace BethanysPieShopStockApp.Models
                
             }
         }
+
+        private DateTime _availibleDate;
+
+        public DateTime AvailibleDate
+        {
+            get { return _availibleDate; }
+            set 
+            { 
+                _availibleDate = value;
+                OnPropertyChanged();
+            }
+        }
+
     }
 }

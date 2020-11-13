@@ -11,7 +11,7 @@ namespace BethanysPieShopStockApp
             InitializeComponent();
 
             //Cource Demos Page Examples
-            MainPage = new AddPiePage(new MockPieService());
+            MainPage = new PieDetailsPage(new MockPieService());
 
             //MainPage = new MainPage();
         }

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BethanysPieShopStockApp.PieDetailsPage">
+    <ScrollView>
+        <Grid            
+        Margin="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label HorizontalOptions="CenterAndExpand"
+               FontSize="Large"
+               FontAttributes="Bold"
+               Margin="0,0,0,20"
+            Text="Pie Details" Grid.ColumnSpan="2"/>
+            <Image HorizontalOptions="CenterAndExpand"
+               Source="{Binding ImageURI}"
+                   Grid.Row="1"
+                   Margin="15,0,15,15"
+                   Grid.ColumnSpan="2"/>
+            <Label VerticalOptions="StartAndExpand" HorizontalOptions="Start" Grid.Row="2" Text="Name"/>
+            <Entry Text="{Binding Name, Mode=TwoWay}" Grid.Row="2" Grid.Column="1" />
+
+            <Label VerticalOptions="StartAndExpand" HorizontalOptions="Start" Grid.Row="3" 
+               Text="Price"
+               />
+            <Entry Text="{Binding Value}"              
+               BindingContext="{x:Reference Name=PriceSlider}"
+               Grid.Row="3" Grid.Column="1"/>
+            <Slider
+            x:Name="PriceSlider"
+             MaximumTrackColor="red"
+            MinimumTrackColor="Blue"
+            Maximum="500"
+            Minimum="0"
+            Value="{Binding Price, Mode=TwoWay}"
+            Margin="0,10,0,30" Grid.Row="4" Grid.ColumnSpan="2" />
+            <Label VerticalOptions="StartAndExpand" HorizontalOptions="Start" Grid.Row="5"  Text="Image"/>
+            <Entry Text="{Binding ImageURI, Mode=TwoWay}" Grid.Row="5" Grid.Column="1" />
+            <Label VerticalOptions="StartAndExpand"  HorizontalOptions="Start" Grid.Row="6" Text="In Stock"/>
+            <Switch IsToggled="{Binding InStock, Mode=TwoWay}" Grid.Row="6" Grid.Column="1" HorizontalOptions="Center" />
+            <Label VerticalOptions="StartAndExpand"  HorizontalOptions="Start" Grid.Row="7" Text="Description"/>
+            <Editor  Text="{Binding Description, Mode=TwoWay}" Grid.Row="8" Grid.Column="1"/>
+            <Label VerticalOptions="StartAndExpand"  HorizontalOptions="Start" Grid.Row="9" Text="Description"/>
+            <DatePicker  Date="{Binding AvailibleDate, Mode=TwoWay}" Grid.Row="9" Grid.Column="1"/>
+            <Button 
+            
+            Grid.Row="10" Grid.ColumnSpan="2"  Text="Save"
+                Clicked="SavePieDetails_OnButtonClicked"
+                BackgroundColor="#22cfa7"/>
+        </Grid>
+    </ScrollView>
+</ContentPage>

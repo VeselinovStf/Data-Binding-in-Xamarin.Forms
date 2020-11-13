@@ -14,6 +14,7 @@ namespace BethanysPieShopStockApp.Views.Demos
 
         public AddPiePage(MockPieService mockPieService)
         {
+            //Coment Out region Demo_AddPiePage in Models/Pie to view this page with working Binding
             InitializeComponent();
 
             MockPieService = mockPieService;

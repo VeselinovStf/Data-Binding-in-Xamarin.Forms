@@ -28,7 +28,8 @@ namespace BethanysPieShopStockApp.Services
                      Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.",
                      InStock = true,
                      Price = 123,
-                     ImageURI = "applepie.jpg"
+                     ImageURI = "applepie.jpg",
+                     AvailibleDate = DateTime.Today
                 },
                 new Pie()
                 {
@@ -37,7 +38,8 @@ namespace BethanysPieShopStockApp.Services
                      Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.",
                      InStock = true,
                      Price = 234,
-                     ImageURI = "applepie.jpg"
+                     ImageURI = "applepie.jpg",
+                     AvailibleDate = DateTime.Today
                 },
                 new Pie()
                 {
@@ -46,7 +48,8 @@ namespace BethanysPieShopStockApp.Services
                      Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.",
                      InStock = true,
                      Price = 432,
-                     ImageURI = "applepie.jpg"
+                     ImageURI = "applepie.jpg",
+                     AvailibleDate = DateTime.Today
                 },
                 new Pie()
                 {
@@ -55,7 +58,8 @@ namespace BethanysPieShopStockApp.Services
                      Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.",
                      InStock = true,
                      Price = 234,
-                     ImageURI = "applepie.jpg"
+                     ImageURI = "applepie.jpg",
+                     AvailibleDate = DateTime.Today
                 },
                 new Pie()
                 {
@@ -64,7 +68,8 @@ namespace BethanysPieShopStockApp.Services
                      Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.",
                      InStock = true,
                      Price = 654,
-                     ImageURI = "applepie.jpg"
+                     ImageURI = "applepie.jpg",
+                     AvailibleDate = DateTime.Today
                 },
                 new Pie()
                 {
@@ -73,7 +78,8 @@ namespace BethanysPieShopStockApp.Services
                      Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.",
                      InStock = true,
                      Price = 76,
-                     ImageURI = "applepie.jpg"
+                     ImageURI = "applepie.jpg",
+                     AvailibleDate = DateTime.Today
                 },
                 new Pie()
                 {
@@ -82,7 +88,8 @@ namespace BethanysPieShopStockApp.Services
                      Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.",
                      InStock = true,
                      Price = 321,
-                     ImageURI = "applepie.jpg"
+                     ImageURI = "applepie.jpg",
+                     AvailibleDate = DateTime.Today
                 },
                 new Pie()
                 {
@@ -91,7 +98,8 @@ namespace BethanysPieShopStockApp.Services
                      Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.",
                      InStock = true,
                      Price = 543,
-                     ImageURI = "applepie.jpg"
+                     ImageURI = "applepie.jpg",
+                     AvailibleDate = DateTime.Today
                 },
             };
 

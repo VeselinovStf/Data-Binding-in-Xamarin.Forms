@@ -1,5 +1,6 @@
 ﻿using BethanysPieShopStockApp.Models;
 using BethanysPieShopStockApp.Services;
+using BethanysPieShopStockApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,30 +13,38 @@ using Xamarin.Forms.Xaml;
 namespace BethanysPieShopStockApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PieDetailsPage : ContentPage
+    public partial class PieDetailsPageView : ContentPage
     {
         private readonly MockPieService MockPieService;
-        public Pie Pie { get; set; }
+        public PieDetailsViewModel PieViewMode { get; set; }
 
-        public PieDetailsPage(MockPieService mockPieService)
+        public PieDetailsPageView(MockPieService mockPieService)
         {
             InitializeComponent();
 
             MockPieService = mockPieService;
 
             Load();
+
+            this.BindingContext = this;
         }
 
         private void Load()
         {
-            this.Pie = MockPieService.Get(1);
+            var servicePie = MockPieService.Get(1);
 
-            this.BindingContext = this.Pie;
+            this.PieViewMode = new  PieDetailsViewModel(servicePie);
+
+            
         }
 
         private void SavePieDetails_OnButtonClicked(object sender, EventArgs e)
         {
-            var pie = this.Pie;
+            var pie = this.PieViewMode;
+
+            MockPieService.Update(pie.Model);
+
+            DisplayAlert("Saved", "Details Saved", "Done");
         }
     }
 }

@@ -24,13 +24,12 @@
                Margin="0,0,0,20"
             Text="Add Pie" Grid.ColumnSpan="2"/>
         <Label VerticalOptions="StartAndExpand" HorizontalOptions="Start" Grid.Row="1" Text="Name"/>
-        <Entry Text="{Binding Name}" Grid.Row="1" Grid.Column="1" />
+        <Entry Text="{Binding Name, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" />
         
         <Label VerticalOptions="StartAndExpand" HorizontalOptions="Start" Grid.Row="2" 
                Text="Price"
                />
-        <Entry Text="{Binding Value}" 
-               HorizontalOptions="CenterAndExpand"
+        <Entry Text="{Binding Value}"              
                BindingContext="{x:Reference Name=PriceSlider}"
                Grid.Row="2" Grid.Column="1"/>
         <Slider
@@ -38,14 +37,17 @@
              MaximumTrackColor="red"
             MinimumTrackColor="Blue"
             Maximum="500"
-            Minimum="{Binding Price}"
+            Minimum="0"
+            Value="{Binding Price, Mode=TwoWay}"
             Margin="0,10,0,30" Grid.Row="3" Grid.ColumnSpan="2" />
         <Label VerticalOptions="StartAndExpand" HorizontalOptions="Start" Grid.Row="4"  Text="Image"/>
-        <Entry Text="{Binding ImageURI}" Grid.Row="4" Grid.Column="1" />
+        <Entry Text="{Binding ImageURI, Mode=TwoWay}" Grid.Row="4" Grid.Column="1" />
         <Label VerticalOptions="StartAndExpand"  HorizontalOptions="Start" Grid.Row="5" Text="In Stock"/>
-        <Switch IsToggled="{Binding InStock}" Grid.Row="5" Grid.Column="1" HorizontalOptions="Center" />
+        <Switch IsToggled="{Binding InStock, Mode=TwoWay}" Grid.Row="5" Grid.Column="1" HorizontalOptions="Center" />
         <Label VerticalOptions="StartAndExpand"  HorizontalOptions="Start" Grid.Row="6" Text="Description"/>
-        <Editor  Text="{Binding Description}" Grid.Row="6" Grid.Column="1"/>
-        <Button Grid.Row="7" Grid.ColumnSpan="2"  Text="Add Pie"/>
+        <Editor  Text="{Binding Description, Mode=TwoWay}" Grid.Row="6" Grid.Column="1"/>
+        <Button 
+            Clicked="AddPie_ButtonClick"
+            Grid.Row="7" Grid.ColumnSpan="2"  Text="Add Pie"/>
     </Grid>
 </ContentPage>

@@ -27,5 +27,11 @@ namespace BethanysPieShopStockApp.Views.Demos
 
             this.BindingContext = this.Pie;
         }
+
+        private void AddPie_ButtonClick(object sender, System.EventArgs e)
+        {
+            var pie = this.Pie;
+            System.Console.WriteLine();
+        }
     }
 }

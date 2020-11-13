@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BethanysPieShopStockApp.Views.OverviewPageView"
+             Padding="15">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ListView 
+            ItemTapped="PiesListView_ItemTapped"
+            x:Name="PiesListView"
+            ItemsSource="{Binding Pies}"
+                  VerticalOptions="FillAndExpand"
+                  CachingStrategy="RecycleElement"
+                  >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell 
+                        
+                        Text="{Binding Name}"
+                               Detail="{Binding Price}"
+                               ImageSource="{Binding ImageURI}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Grid.Row="1" Text="Add Pie Demo" Clicked="AddPieDemo_OnButtonClicked"/>
+    </Grid>
+</ContentPage>

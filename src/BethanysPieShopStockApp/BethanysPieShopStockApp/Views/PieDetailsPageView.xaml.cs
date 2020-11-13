@@ -16,6 +16,7 @@ namespace BethanysPieShopStockApp
     public partial class PieDetailsPageView : ContentPage
     {
         private readonly MockPieService MockPieService;
+
         public PieDetailsViewModel PieViewMode { get; set; }
 
         public PieDetailsPageView(MockPieService mockPieService)
@@ -25,6 +26,18 @@ namespace BethanysPieShopStockApp
             MockPieService = mockPieService;
 
             Load();
+
+            this.BindingContext = this;
+        }
+
+        public PieDetailsPageView(Pie pie)
+        {
+            InitializeComponent();
+
+            PieViewMode = new PieDetailsViewModel(pie);
+
+            //Newing up for demo purpose
+            MockPieService = new MockPieService();
 
             this.BindingContext = this;
         }

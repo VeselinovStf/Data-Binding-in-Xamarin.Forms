@@ -1,4 +1,5 @@
 ﻿using BethanysPieShopStockApp.Services;
+using BethanysPieShopStockApp.Views;
 using BethanysPieShopStockApp.Views.Demos;
 using Xamarin.Forms;
 
@@ -11,9 +12,12 @@ namespace BethanysPieShopStockApp
             InitializeComponent();
 
             //Cource Demos Page Examples
-            MainPage = new PieDetailsPageView(new MockPieService());
+            //MainPage = new AddPiePage(new MockPieService());
 
             //MainPage = new MainPage();
+            //MainPage = new PieDetailsPageView(new MockPieService());
+            MainPage = new NavigationPage(new OverviewPageView(new MockPieService()));
+
         }
 
         protected override void OnStart()

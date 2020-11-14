@@ -4,7 +4,7 @@ using BethanysPieShopStockApp.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace BethanysPieShopStockApp.Views.Demos
+namespace BethanysPieShopStockApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddPiePage : ContentPage
@@ -24,15 +24,20 @@ namespace BethanysPieShopStockApp.Views.Demos
        
         private void Load()
         {
-            this.Pie = MockPieService.Get(1);
+            this.Pie = new Pie();
 
             this.BindingContext = this.Pie;
         }
 
-        private void AddPie_ButtonClick(object sender, System.EventArgs e)
+        private async void AddPie_ButtonClick(object sender, System.EventArgs e)
         {
             var pie = this.Pie;
-            System.Console.WriteLine();
+
+            MockPieService.Add(pie);
+
+            await DisplayAlert("Success", "Pie Added To List", "Done");
+
+            await Navigation.PopAsync();
         }
     }
 }

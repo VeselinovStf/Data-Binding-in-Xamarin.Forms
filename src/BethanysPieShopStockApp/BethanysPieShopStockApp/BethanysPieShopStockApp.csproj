@@ -28,7 +28,7 @@
     <EmbeddedResource Update="Views\PieDetailsPageView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Demos\AddPiePage.xaml">
+    <EmbeddedResource Update="Views\AddPiePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

@@ -51,13 +51,15 @@ namespace BethanysPieShopStockApp
             
         }
 
-        private void SavePieDetails_OnButtonClicked(object sender, EventArgs e)
+        private async void SavePieDetails_OnButtonClicked(object sender, EventArgs e)
         {
             var pie = this.PieViewMode;
 
             MockPieService.Update(pie.Model);
 
-            DisplayAlert("Saved", "Details Saved", "Done");
+            await DisplayAlert("Saved", "Details Saved", "Done");
+
+            await Navigation.PopAsync();
         }
     }
 }

@@ -105,10 +105,19 @@ namespace BethanysPieShopStockApp.Services
 
         }
 
+        public void Add(Pie pie)
+        {
+            if (pie != null)
+            {
+                Pies.Add(pie);
+            }
+            
+        }
+
         public IList<Pie> Pies
         {
             get => _pies.OrderBy(p => p.Id).ToList();
-            private set => _pies = value;
+            set => _pies = value;
         }
 
         public Pie Get(int id)
@@ -119,6 +128,7 @@ namespace BethanysPieShopStockApp.Services
         public void Update(Pie pie)
         {
             var updatablePie = this.Pies.FirstOrDefault(p => p.Id == pie.Id);
+
             updatablePie = pie;
         }
 

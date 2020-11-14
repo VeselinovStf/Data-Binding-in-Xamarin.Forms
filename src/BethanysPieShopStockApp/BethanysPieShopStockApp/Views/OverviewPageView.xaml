@@ -19,6 +19,6 @@
             ItemTemplate="{StaticResource templatePieSelector}"
                   >
         </ListView>
-        <Button Grid.Row="1" Text="Add Pie Demo" Clicked="AddPieDemo_OnButtonClicked"/>
+        <Button Grid.Row="1" Text="Add Pie" Clicked="AddPie_OnButtonClicked"/>
     </Grid>
 </ContentPage>

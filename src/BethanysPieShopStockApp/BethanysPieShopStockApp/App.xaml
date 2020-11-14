@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BethanysPieShopStockApp.App">
+             x:Class="BethanysPieShopStockApp.App"
+              xmlns:pietemplateSelector="clr-namespace:BethanysPieShopStockApp.TemplatesSelectors;assembly=BethanysPieShopStockApp">
     <Application.Resources>
-        <DataTemplate x:Key="PieOvervieListItemTemplate">
+
+        <DataTemplate x:Key="RegularPieTemplate">
             <ViewCell>
                 <Grid HeightRequest="70" Margin="5" BackgroundColor="White" RowSpacing="5" Padding="5">
                     <Grid.RowDefinitions>
@@ -20,5 +22,25 @@
                 </Grid>
             </ViewCell>
         </DataTemplate>
+        <DataTemplate x:Key="NotInStockTemplate">
+            <ViewCell IsEnabled="False">
+                <Grid HeightRequest="70" Margin="5" BackgroundColor="Red" RowSpacing="5" Padding="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="{Binding ImageURI}" HorizontalOptions="Start"/>
+                    <Label Grid.Column="1" Text="{Binding Name}"/>
+                    <Label Grid.Column="2" Text="{Binding Price}" HorizontalOptions="End"/>
+                </Grid>
+            </ViewCell>
+        </DataTemplate>
+        <pietemplateSelector:PieTemplateSelector x:Key="templatePieSelector"
+                               RegularPieTemplate="{StaticResource RegularPieTemplate}"
+                               NotInStockTemplate="{StaticResource NotInStockTemplate}"/>
     </Application.Resources>
 </Application>

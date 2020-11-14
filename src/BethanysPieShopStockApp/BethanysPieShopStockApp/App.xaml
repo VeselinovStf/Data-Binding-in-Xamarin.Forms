@@ -3,13 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BethanysPieShopStockApp.App"
               xmlns:pietemplateSelector="clr-namespace:BethanysPieShopStockApp.TemplatesSelectors;assembly=BethanysPieShopStockApp"
-             xmlns:converters="clr-namespace:BethanysPieShopStockApp.Converters;assembly=BethanysPieShopStockApp">
+             xmlns:converters="clr-namespace:BethanysPieShopStockApp.Converters;assembly=BethanysPieShopStockApp"
+             xmlns:model="clr-namespace:BethanysPieShopStockApp.Models;assembly=BethanysPieShopStockApp">
     <Application.Resources>
         <converters:CurrencyConverter x:Key="ToCurrencyConverter" />
         <converters:DoubleToColorConverter x:Key="DoubleToColorConverter" />
 
 
-        <DataTemplate x:Key="RegularPieTemplate">
+        <DataTemplate x:Key="RegularPieTemplate" x:DataType="model:Pie">
             <ViewCell>
                 <Grid HeightRequest="70" Margin="5" BackgroundColor="White" RowSpacing="5" Padding="5">
                     <Grid.RowDefinitions>
@@ -20,13 +21,15 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Image Source="{Binding ImageURI}" HorizontalOptions="Start"/>
+                    <Image Source="{Binding ImageURI, TargetNullValue='https://via.placeholder.com/150/000000/FFFFFF/?text=NoImage'}" HorizontalOptions="Start"/>
                     <Label Grid.Column="1" Text="{Binding Name}"/>
-                    <Label Grid.Column="2" TextColor="{Binding Price,Converter={StaticResource DoubleToColorConverter},ConverterParameter=200}" Text="{Binding Price, Converter={StaticResource ToCurrencyConverter}}" HorizontalOptions="End"/>
+                    <Label Grid.Column="2" 
+                           TextColor="{Binding Price,Converter={StaticResource DoubleToColorConverter},ConverterParameter=200}" 
+                           Text="{Binding Price,StringFormat='{0:c}'}" HorizontalOptions="End"/>
                 </Grid>
             </ViewCell>
         </DataTemplate>
-        <DataTemplate x:Key="NotInStockTemplate">
+        <DataTemplate x:Key="NotInStockTemplate" x:DataType="model:Pie">
             <ViewCell IsEnabled="False">
                 <Grid HeightRequest="70" Margin="5" BackgroundColor="OrangeRed" RowSpacing="5" Padding="5">
                     <Grid.RowDefinitions>
@@ -37,7 +40,7 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Image Source="{Binding ImageURI}" HorizontalOptions="Start"/>
+                    <Image Source="{Binding ImageURI, TargetNullValue='https://via.placeholder.com/150/000000/FFFFFF/?text=NoImage'}" HorizontalOptions="Start"/>
                     <Label Grid.Column="1" Text="{Binding Name}"/>
                     <Label Grid.Column="2" Text="{Binding Price, Converter={StaticResource ToCurrencyConverter}}" HorizontalOptions="End"/>
                 </Grid>

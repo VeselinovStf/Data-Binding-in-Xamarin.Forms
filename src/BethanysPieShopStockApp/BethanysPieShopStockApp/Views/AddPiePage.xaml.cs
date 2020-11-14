@@ -21,7 +21,7 @@ namespace BethanysPieShopStockApp.Views
 
             Load();
         }
-       
+
         private void Load()
         {
             this.Pie = new Pie();

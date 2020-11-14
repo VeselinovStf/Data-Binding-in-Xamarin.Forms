@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
 using Xamarin.Forms;
 
 namespace BethanysPieShopStockApp.Converters
@@ -22,7 +20,7 @@ namespace BethanysPieShopStockApp.Converters
                 case double v when v > p:
                     return Color.Gold;
                 default:
-                    return Color.Red;                    
+                    return Color.Red;
             }
         }
 

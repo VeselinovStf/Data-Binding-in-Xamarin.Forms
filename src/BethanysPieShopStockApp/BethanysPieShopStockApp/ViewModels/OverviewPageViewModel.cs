@@ -1,13 +1,10 @@
 ﻿using BethanysPieShopStockApp.Models;
 using BethanysPieShopStockApp.Services;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 
 namespace BethanysPieShopStockApp.ViewModels
 {
-    public class OverviewPageViewModel 
+    public class OverviewPageViewModel
     {
         public MockPieService MockPieService { get; }
         public ObservableCollection<Pie> Pies { get; set; }

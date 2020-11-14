@@ -9,7 +9,7 @@ namespace BethanysPieShopStockApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class OverviewPageView : ContentPage
-    {       
+    {
         public OverviewPageView(OverviewPageViewModel piesViewModel)
         {
             InitializeComponent();

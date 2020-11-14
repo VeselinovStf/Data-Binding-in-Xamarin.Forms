@@ -2,10 +2,6 @@
 using BethanysPieShopStockApp.Services;
 using BethanysPieShopStockApp.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -46,9 +42,9 @@ namespace BethanysPieShopStockApp
         {
             var servicePie = MockPieService.Get(1);
 
-            this.PieViewMode = new  PieDetailsViewModel(servicePie);
+            this.PieViewMode = new PieDetailsViewModel(servicePie);
 
-            
+
         }
 
         private async void SavePieDetails_OnButtonClicked(object sender, EventArgs e)

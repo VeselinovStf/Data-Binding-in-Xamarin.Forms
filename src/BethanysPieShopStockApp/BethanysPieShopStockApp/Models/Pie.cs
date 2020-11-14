@@ -1,5 +1,4 @@
-﻿using BethanysPieShopStockApp.ViewModels;
-using System;
+﻿using System;
 
 namespace BethanysPieShopStockApp.Models
 {

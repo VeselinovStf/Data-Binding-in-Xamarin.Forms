@@ -10,8 +10,8 @@ namespace BethanysPieShopStockApp.ViewModels
         public int Id
         {
             get { return _id; }
-            set 
-            { 
+            set
+            {
                 _id = value;
                 OnPropertyChanged();
             }

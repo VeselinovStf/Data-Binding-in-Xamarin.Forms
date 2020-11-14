@@ -5,11 +5,11 @@
               xmlns:pietemplateSelector="clr-namespace:BethanysPieShopStockApp.TemplatesSelectors;assembly=BethanysPieShopStockApp"
              xmlns:converters="clr-namespace:BethanysPieShopStockApp.Converters;assembly=BethanysPieShopStockApp">
     <Application.Resources>
-        <converters:CurrencyConverter x:Key="ToCurrencyConverter" >
-            </converters:CurrencyConverter>
+        <converters:CurrencyConverter x:Key="ToCurrencyConverter" />
+        <converters:DoubleToColorConverter x:Key="DoubleToColorConverter" />
 
 
-            <DataTemplate x:Key="RegularPieTemplate">
+        <DataTemplate x:Key="RegularPieTemplate">
             <ViewCell>
                 <Grid HeightRequest="70" Margin="5" BackgroundColor="White" RowSpacing="5" Padding="5">
                     <Grid.RowDefinitions>
@@ -22,13 +22,13 @@
                     </Grid.ColumnDefinitions>
                     <Image Source="{Binding ImageURI}" HorizontalOptions="Start"/>
                     <Label Grid.Column="1" Text="{Binding Name}"/>
-                    <Label Grid.Column="2" Text="{Binding Price, Converter={StaticResource ToCurrencyConverter}}" HorizontalOptions="End"/>
+                    <Label Grid.Column="2" TextColor="{Binding Price,Converter={StaticResource DoubleToColorConverter},ConverterParameter=200}" Text="{Binding Price, Converter={StaticResource ToCurrencyConverter}}" HorizontalOptions="End"/>
                 </Grid>
             </ViewCell>
         </DataTemplate>
         <DataTemplate x:Key="NotInStockTemplate">
             <ViewCell IsEnabled="False">
-                <Grid HeightRequest="70" Margin="5" BackgroundColor="Red" RowSpacing="5" Padding="5">
+                <Grid HeightRequest="70" Margin="5" BackgroundColor="OrangeRed" RowSpacing="5" Padding="5">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                     </Grid.RowDefinitions>

@@ -2,10 +2,14 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BethanysPieShopStockApp.App"
-              xmlns:pietemplateSelector="clr-namespace:BethanysPieShopStockApp.TemplatesSelectors;assembly=BethanysPieShopStockApp">
+              xmlns:pietemplateSelector="clr-namespace:BethanysPieShopStockApp.TemplatesSelectors;assembly=BethanysPieShopStockApp"
+             xmlns:converters="clr-namespace:BethanysPieShopStockApp.Converters;assembly=BethanysPieShopStockApp">
     <Application.Resources>
+        <converters:CurrencyConverter x:Key="ToCurrencyConverter" >
+            </converters:CurrencyConverter>
 
-        <DataTemplate x:Key="RegularPieTemplate">
+
+            <DataTemplate x:Key="RegularPieTemplate">
             <ViewCell>
                 <Grid HeightRequest="70" Margin="5" BackgroundColor="White" RowSpacing="5" Padding="5">
                     <Grid.RowDefinitions>
@@ -18,7 +22,7 @@
                     </Grid.ColumnDefinitions>
                     <Image Source="{Binding ImageURI}" HorizontalOptions="Start"/>
                     <Label Grid.Column="1" Text="{Binding Name}"/>
-                    <Label Grid.Column="2" Text="{Binding Price}" HorizontalOptions="End"/>
+                    <Label Grid.Column="2" Text="{Binding Price, Converter={StaticResource ToCurrencyConverter}}" HorizontalOptions="End"/>
                 </Grid>
             </ViewCell>
         </DataTemplate>
@@ -35,7 +39,7 @@
                     </Grid.ColumnDefinitions>
                     <Image Source="{Binding ImageURI}" HorizontalOptions="Start"/>
                     <Label Grid.Column="1" Text="{Binding Name}"/>
-                    <Label Grid.Column="2" Text="{Binding Price}" HorizontalOptions="End"/>
+                    <Label Grid.Column="2" Text="{Binding Price, Converter={StaticResource ToCurrencyConverter}}" HorizontalOptions="End"/>
                 </Grid>
             </ViewCell>
         </DataTemplate>

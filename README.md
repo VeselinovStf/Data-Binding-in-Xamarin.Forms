@@ -1,7 +1,7 @@
 # Data-Binding-in-Xamarin.Forms
 "Data Binding in Xamarin.Forms" Pluralsight course repository
 
-![completed project image](http://url/to/img.png)
+![completed project image](https://github.com/VeselinovStf/Data-Binding-in-Xamarin.Forms/blob/main/repoImg/demo.bmp)
 
 "Learn how to create data-bound applications in Xamarin.Forms."
 
@@ -17,3 +17,7 @@
 - Binding to a Collection
 - Advanced Data Binding Concepts
 - Data Binding and MVVM
+
+## Status
+
+- Completed
